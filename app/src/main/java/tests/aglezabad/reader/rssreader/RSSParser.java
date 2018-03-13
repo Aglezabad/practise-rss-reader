@@ -60,7 +60,8 @@ class RSSParser {
                     result = xmlPullParser.getText();
                     xmlPullParser.nextTag();
                 }
-
+                
+                // Added isElement check because some RSS feeds are not providing a std structure.
                 if (isElement && name.equalsIgnoreCase("title")) {
                     title = result;
                 } else if(isElement && name.equalsIgnoreCase("link")) {
